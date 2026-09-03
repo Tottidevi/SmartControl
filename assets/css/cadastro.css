@@ -1,0 +1,123 @@
+/* ========================================
+   CADASTRO.CSS
+   Estilos exclusivos da página de cadastro.
+======================================== */
+
+#formCadastro {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#formCadastro .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+#formCadastro .campo-full {
+    grid-column: 1 / -1;
+}
+
+#formCadastro label {
+    color: #c99cff;
+    font-size: 14px;
+}
+
+#formCadastro small.ajuda {
+    color: #b9a6cf;
+    font-size: 12px;
+}
+
+#formCadastro small.erro {
+    color: #ff9a9a;
+    font-size: 12px;
+    min-height: 16px;
+}
+
+/* Bloco de permissões (checkboxes) */
+.permissoes-grupo {
+    grid-column: 1 / -1;
+    padding: 15px;
+    border: 1px solid #543a70;
+    border-radius: 10px;
+    background: #1a1028;
+}
+
+.permissoes-grupo legend {
+    padding: 0 8px;
+    color: #c99cff;
+    font-weight: bold;
+}
+
+.permissoes-opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 8px;
+}
+
+.opcao-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opcao-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #7b3fc6;
+}
+
+/* Termos de uso */
+.termos-grupo {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.termos-grupo input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: #7b3fc6;
+}
+
+.termos-grupo label {
+    color: white;
+    font-weight: normal;
+}
+
+#formCadastro .botoes-cadastro {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Tema claro */
+body:not(.dark-theme) .permissoes-grupo {
+    background: #f4f4f7;
+    border-color: #ddd;
+}
+
+body:not(.dark-theme) #formCadastro label,
+body:not(.dark-theme) .permissoes-grupo legend {
+    color: #6d3bb8;
+}
+
+body:not(.dark-theme) .termos-grupo label {
+    color: #222;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    #formCadastro {
+        grid-template-columns: 1fr;
+    }
+}

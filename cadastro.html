@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Control - Cadastro</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+
+<body class="dark-theme">
+
+    <header>
+        <img src="assets/images/logo2dnv.png" alt="Logo Smart Control" width="80" height="80">
+
+        <h1>Cadastro de Usuário</h1>
+
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+                <li><a href="suporte.html">Ajuda</a></li>
+                <li><a href="index.html">Sair</a></li>
+                <li>
+                    <button id="botaoTema" type="button">☀️ Light Mode</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Crie sua conta no Smart Control</h2>
+
+        <form id="formCadastro" novalidate>
+
+            <div class="campo">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required minlength="3" autocomplete="name">
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required maxlength="14" inputmode="numeric" autocomplete="off">
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required autocomplete="email">
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required maxlength="15" autocomplete="tel">
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8" autocomplete="new-password">
+            </div>
+
+            <div class="campo">
+                <label for="confirmarSenha">Confirmar senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha" required minlength="8" autocomplete="new-password">
+            </div>
+
+            <div class="campo">
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo" required>
+                    <option value="">Selecione</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Técnico">Técnico</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Operador">Operador</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="turno">Turno:</label>
+                <select id="turno" name="turno" required>
+                    <option value="">Selecione</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+            </div>
+
+            <fieldset class="permissoes-grupo">
+                <legend>Permissões de acesso</legend>
+
+                <div class="permissoes-opcoes">
+                    <div class="opcao-checkbox">
+                        <input type="checkbox" id="relatorios" name="relatorios">
+                        <label for="relatorios">Relatórios</label>
+                    </div>
+
+                    <div class="opcao-checkbox">
+                        <input type="checkbox" id="usuarios" name="usuarios">
+                        <label for="usuarios">Usuários</label>
+                    </div>
+
+                    <div class="opcao-checkbox">
+                        <input type="checkbox" id="configuracoes" name="configuracoes">
+                        <label for="configuracoes">Configurações</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="termos-grupo">
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos">Li e aceito os termos de uso do Smart Control.</label>
+            </div>
+
+            <div class="botoes-cadastro">
+                <button type="submit">Cadastrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Smart Control</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

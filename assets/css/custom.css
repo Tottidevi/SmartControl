@@ -1,0 +1,505 @@
+/* ========================================
+   CUSTOM.CSS
+   Tema claro/escuro, accordion, busca,
+   dispositivos, estados visuais e gráfico.
+======================================== */
+
+/* ========================================
+   INDEX - LISTA DE ACESSO
+======================================== */
+.acesso-lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.acesso-lista a {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #7b3fc6;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.acesso-lista a:hover,
+.acesso-lista a:focus-visible {
+    background: #9959e8;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Botão de tema */
+#botaoTema {
+    background-color: #6d3bb8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#botaoTema:hover {
+    background-color: #5a2fa0;
+}
+
+/* ========================================
+   ACCORDION (Links úteis)
+======================================== */
+.accordion {
+    margin-top: 20px;
+}
+
+#botaoLinks {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #6d3bb8;
+    border-radius: 10px;
+    background-color: #241633;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#botaoLinks:hover {
+    background-color: #6d3bb8;
+}
+
+#painelLinks {
+    display: none;
+    margin-top: 5px;
+    padding: 15px;
+    background-color: #241633;
+    border: 1px solid #6d3bb8;
+    border-radius: 10px;
+}
+
+#painelLinks.aberto {
+    display: block;
+}
+
+#painelLinks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#painelLinks li {
+    margin: 10px 0;
+}
+
+#iconeLinks {
+    /* decorativo: o texto do botão já informa a função */
+    pointer-events: none;
+}
+
+/* ========================================
+   TRANSIÇÃO SUAVE ENTRE TEMAS
+======================================== */
+body,
+header,
+main,
+td,
+th,
+#campoBusca,
+#botaoTema,
+#botaoLinks,
+#painelLinks,
+.dispositivos,
+.card-dispositivo,
+.area-busca,
+.card {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* ========================================
+   TEMA CLARO
+   (ativo quando o body NÃO tem .dark-theme)
+======================================== */
+body:not(.dark-theme) {
+    background-color: #f4f4f7;
+    color: #222;
+}
+
+body:not(.dark-theme) header,
+body:not(.dark-theme) main,
+body:not(.dark-theme) footer {
+    background-color: #ffffff;
+}
+
+body:not(.dark-theme) header {
+    border-bottom-color: #d8c6f2;
+}
+
+body:not(.dark-theme) main {
+    border-color: #d8c6f2;
+}
+
+body:not(.dark-theme) h1,
+body:not(.dark-theme) h2,
+body:not(.dark-theme) nav a {
+    color: #6d3bb8;
+}
+
+body:not(.dark-theme) td,
+body:not(.dark-theme) th {
+    background-color: #ffffff;
+    color: #222;
+    border-color: #ddd;
+}
+
+body:not(.dark-theme) th {
+    color: #6d3bb8;
+}
+
+body:not(.dark-theme) input,
+body:not(.dark-theme) select,
+body:not(.dark-theme) textarea,
+body:not(.dark-theme) #campoBusca {
+    background-color: #ffffff;
+    color: #222;
+    border-color: #ccc;
+}
+
+body:not(.dark-theme) #botaoTema {
+    background-color: #6d3bb8;
+    color: #ffffff;
+}
+
+body:not(.dark-theme) #botaoLinks,
+body:not(.dark-theme) #painelLinks {
+    background-color: #ffffff;
+    color: #222;
+    border-color: #ddd;
+}
+
+body:not(.dark-theme) .dispositivos,
+body:not(.dark-theme) .card-dispositivo,
+body:not(.dark-theme) .area-busca,
+body:not(.dark-theme) .card {
+    background: #ffffff;
+    border-color: #ddd;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   DISPOSITIVOS
+======================================== */
+.dispositivos {
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 15px;
+    background: #21152f;
+    border: 1px solid #3d2855;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.dispositivos h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* FORMULÁRIO */
+#formDispositivo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#formDispositivo div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#formDispositivo label {
+    font-weight: bold;
+}
+
+#formDispositivo input,
+#formDispositivo select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #543a70;
+    background: #160d24;
+    color: white;
+    outline: none;
+}
+
+#formDispositivo input:focus,
+#formDispositivo select:focus {
+    border-color: #9b5de5;
+    box-shadow: 0 0 0 2px rgba(155, 93, 229, 0.2);
+}
+
+#formDispositivo button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #7b3fc6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#formDispositivo button:hover {
+    transform: translateY(-2px);
+    background: #8f4ddd;
+}
+
+body:not(.dark-theme) #formDispositivo input,
+body:not(.dark-theme) #formDispositivo select {
+    background: #ffffff;
+    color: #222;
+    border-color: #ccc;
+}
+
+/* ========================================
+   LISTA DE DISPOSITIVOS
+======================================== */
+.lista-dispositivos {
+    margin-top: 30px;
+}
+
+.lista-dispositivos h2 {
+    margin-bottom: 20px;
+}
+
+#listaDispositivos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD DO DISPOSITIVO */
+.card-dispositivo {
+    padding: 20px;
+    border-radius: 15px;
+    background: #21152f;
+    border: 2px solid #3d2855;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+.card-dispositivo:hover {
+    transform: translateY(-4px);
+}
+
+.card-dispositivo h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.card-dispositivo p {
+    margin: 8px 0;
+}
+
+/* ---- Estados visuais (Ativo / Inativo / Alerta) ---- */
+.card-dispositivo.status-ativo {
+    border-color: #7b3fc6;
+}
+
+.card-dispositivo.status-inativo {
+    border-color: #543a70;
+    opacity: 0.65;
+}
+
+.card-dispositivo.status-alerta {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.35), 0 6px 18px rgba(0, 0, 0, 0.2);
+    animation: pulso-alerta 1.6s ease-in-out infinite;
+}
+
+@keyframes pulso-alerta {
+    0%, 100% { box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.35), 0 6px 18px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(255, 107, 107, 0.15), 0 6px 18px rgba(0,0,0,0.2); }
+}
+
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.badge-status .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.badge-status.ativo {
+    background: rgba(123, 63, 198, 0.25);
+    color: #c99cff;
+}
+
+.badge-status.ativo .dot {
+    background: #9b5de5;
+}
+
+.badge-status.inativo {
+    background: rgba(84, 58, 112, 0.35);
+    color: #b9a6cf;
+}
+
+.badge-status.inativo .dot {
+    background: #8a7aa0;
+}
+
+.badge-status.alerta {
+    background: rgba(255, 107, 107, 0.18);
+    color: #ff9a9a;
+}
+
+.badge-status.alerta .dot {
+    background: #ff6b6b;
+}
+
+.telemetria hr {
+    border-color: #3d2855;
+    margin: 10px 0;
+}
+
+.alerta-telemetria {
+    font-weight: bold;
+}
+
+.dispositivo-inicializando {
+    font-style: italic;
+    color: #b9a6cf;
+}
+
+/* ========================================
+   BUSCA
+======================================== */
+.area-busca {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: #21152f;
+    border: 1px solid #3d2855;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.area-busca label {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#campoBusca {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #543a70;
+    border-radius: 8px;
+    background: #160d24;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#campoBusca::placeholder {
+    color: #aaa;
+}
+
+#campoBusca:focus {
+    border-color: #9b5de5;
+    box-shadow: 0 0 0 2px rgba(155, 93, 229, 0.2);
+}
+
+body:not(.dark-theme) #campoBusca::placeholder {
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .area-busca {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .area-busca label {
+        white-space: normal;
+    }
+
+    #campoBusca {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ========================================
+   GRÁFICO DE TELEMETRIA
+======================================== */
+.grafico-telemetria {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #21152f;
+    border: 1px solid #3d2855;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.grafico-telemetria h2 {
+    margin-bottom: 15px;
+}
+
+.grafico-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+}
+
+body:not(.dark-theme) .grafico-telemetria {
+    background: #ffffff;
+    border-color: #ddd;
+}
+
+/* ========================================
+   RESPONSIVIDADE - DISPOSITIVOS
+======================================== */
+@media (max-width: 800px) {
+    #formDispositivo {
+        grid-template-columns: 1fr;
+    }
+
+    #listaDispositivos {
+        grid-template-columns: 1fr;
+    }
+
+    .grafico-container {
+        height: 260px;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+    #listaDispositivos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,147 @@
+/* ========================================
+   ESTILOS EXCLUSIVOS - PÁGINA DE SUPORTE
+======================================== */
+
+/* Container do Formulário (Card Roxo Escuro) */
+#formSuporte {
+    width: 100%;
+    max-width: 650px;
+    margin: 20px auto 0;
+    padding: 30px;
+    background-color: #241633;
+    border: 1px solid #6d3bb8;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Espaçamento das Divs do Formulário */
+#formSuporte div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Labels em Roxo Claro */
+#formSuporte label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #c99cff;
+    font-size: 14px;
+}
+
+/* Inputs, Selects e Textarea Escuros */
+#formSuporte input,
+#formSuporte select,
+#formSuporte textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #160d24;
+    border: 1px solid #543a70;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholders em tom roxo apagado */
+#formSuporte input::placeholder,
+#formSuporte textarea::placeholder {
+    color: #8b71a5;
+}
+
+/* Efeito ao Clicar/Focar no Campo */
+#formSuporte input:focus,
+#formSuporte select:focus,
+#formSuporte textarea:focus {
+    border-color: #9b5de5;
+    box-shadow: 0 0 8px rgba(155, 93, 229, 0.4);
+}
+
+/* Cor de Fundo das Opções do Select */
+#formSuporte select option {
+    background-color: #160d24;
+    color: #ffffff;
+}
+
+/* Caixas de Texto */
+#formSuporte textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Estilo do Botão Enviar */
+#formSuporte button[type="submit"] {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7b3fc6;
+    color: #ffffff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-right: 10px;
+}
+
+#formSuporte button[type="submit"]:hover {
+    background-color: #8f4ddd;
+    transform: translateY(-2px);
+}
+
+/* Estilo do Botão Limpar */
+#formSuporte button[type="reset"] {
+    padding: 12px 24px;
+    border: 1px solid #543a70;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #c08cff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#formSuporte button[type="reset"]:hover {
+    background-color: rgba(221, 7, 157, 0.15);
+    color: rgb(221, 7, 157);
+    border-color: rgb(221, 7, 157);
+}
+
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+    margin-top: -5px;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: rgba(123, 63, 198, 0.2);
+    border: 1px solid #7b3fc6;
+    color: #c99cff;
+    font-weight: bold;
+    display: none;
+}
+
+.mensagem-sucesso.visivel {
+    display: block;
+}
+
+body:not(.dark-theme) .mensagem-sucesso {
+    background: rgba(123, 63, 198, 0.08);
+    color: #6d3bb8;
+}
+
+/* Responsividade Celular */
+@media (max-width: 768px) {
+    #formSuporte {
+        padding: 20px;
+        width: 100%;
+    }
+
+    #formSuporte button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

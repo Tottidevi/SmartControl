@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <title>Smart Control - Dashboard</title>
+</head>
+
+<body class="dark-theme">
+
+    <!-- Cabeçalho -->
+    <header>
+
+        <img src="assets/images/logo2dnv.png" alt="Logo Smart Control" width="80" height="80">
+
+        <h1>Dashboard</h1>
+
+        <div class="relogio">
+            <span id="saudacao"></span>
+            <span id="hora"></span>
+            <span id="data"></span>
+        </div>
+
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul class="main-menu">
+                <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+                <li><a href="cadastro.html">Cadastrar</a></li>
+                <li><a href="index.html">Sair</a></li>
+                <li><a href="suporte.html">Ajuda</a></li>
+
+                <li>
+                    <button id="botaoTema" type="button">
+                        ☀️ Light Mode
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="cards" aria-label="Resumo do sistema">
+
+            <div class="card">
+                <span class="badge online">
+                    <span class="dot"></span>
+                    Ativos
+                </span>
+                <h3>Usuários</h3>
+                <p>32</p>
+            </div>
+
+            <div class="card">
+                <span class="badge alertas">
+                    <span class="dot"></span>
+                    3 Alertas
+                </span>
+                <h3>Alertas</h3>
+                <p>03</p>
+            </div>
+
+            <div class="card">
+                <span class="badge online">
+                    <span class="dot"></span>
+                    Online
+                </span>
+                <h3>Sistema</h3>
+                <p>100%</p>
+            </div>
+
+        </section>
+
+        <section id="usuarioCadastrado" class="usuario-cadastrado">
+            <h3>Usuário cadastrado</h3>
+            <p id="nomeUsuario">Nenhum usuário cadastrado.</p>
+            <p id="cargoUsuario"></p>
+            <p id="turnoUsuario"></p>
+        </section>
+
+        <section class="dispositivos">
+
+            <h2>Gerenciamento de Dispositivos</h2>
+
+            <form id="formDispositivo">
+
+                <div>
+                    <label for="nomeDispositivo">Nome do dispositivo:</label>
+                    <input
+                        type="text"
+                        id="nomeDispositivo"
+                        placeholder="Ex: Sensor Temperatura"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="tipoDispositivo">Tipo:</label>
+                    <select id="tipoDispositivo" required>
+                        <option value="">Selecione</option>
+                        <option value="Sensor">Sensor</option>
+                        <option value="Câmera">Câmera</option>
+                        <option value="Controlador">Controlador</option>
+                        <option value="Motor">Motor</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="ipDispositivo">Endereço IP:</label>
+                    <input
+                        type="text"
+                        id="ipDispositivo"
+                        placeholder="192.168.0.100"
+                        required
+                        inputmode="decimal"
+                    >
+                </div>
+
+                <div>
+                    <label for="statusDispositivo">Status inicial:</label>
+                    <select id="statusDispositivo" required>
+                        <option value="">Selecione</option>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Cadastrar dispositivo
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="lista-dispositivos">
+
+            <h2>Dispositivos cadastrados</h2>
+
+            <div id="listaDispositivos">
+                <p>Nenhum dispositivo cadastrado.</p>
+            </div>
+
+        </section>
+
+        <section class="grafico-telemetria">
+            <h2>Telemetria em tempo real</h2>
+            <div class="grafico-container">
+                <canvas id="graficoTelemetria" role="img" aria-label="Gráfico de linha mostrando a quantidade de dispositivos ativos e em alerta ao longo do tempo"></canvas>
+            </div>
+        </section>
+
+        <section class="area-busca">
+            <label for="campoBusca">Buscar usuário na tabela:</label>
+            <input
+                type="text"
+                id="campoBusca"
+                placeholder="Digite um nome..."
+            >
+        </section>
+
+        <h2>Relatório de Acessos Recentes</h2>
+
+        <table>
+            <caption>Últimos acessos registrados no sistema</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td data-label="Nome">Jotinha</td>
+                    <td data-label="Data">23/07/2026</td>
+                    <td data-label="Hora">08:15</td>
+                    <td data-label="Status">Ativo</td>
+                </tr>
+                <tr>
+                    <td data-label="Nome">Mariadb</td>
+                    <td data-label="Data">23/07/2026</td>
+                    <td data-label="Hora">09:40</td>
+                    <td data-label="Status">Inativo</td>
+                </tr>
+                <tr>
+                    <td data-label="Nome">Pedrodfs</td>
+                    <td data-label="Data">23/07/2026</td>
+                    <td data-label="Hora">10:25</td>
+                    <td data-label="Status">Ativo</td>
+                </tr>
+                <tr>
+                    <td data-label="Nome">Ana-conda</td>
+                    <td data-label="Data">24/07/2026</td>
+                    <td data-label="Hora">08:05</td>
+                    <td data-label="Status">Ativo</td>
+                </tr>
+                <tr>
+                    <td data-label="Nome">Carlos maio</td>
+                    <td data-label="Data">24/07/2026</td>
+                    <td data-label="Hora">09:20</td>
+                    <td data-label="Status">Inativo</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <div class="accordion">
+            <button id="botaoLinks" type="button">
+                Links úteis
+                <span id="iconeLinks" aria-hidden="true">▼</span>
+            </button>
+
+            <nav id="painelLinks" class="links" aria-label="Links úteis">
+                <ul>
+                    <li>
+                        <a href="https://pedrotech.com.br/pedrolandia/" target="_blank" rel="noopener noreferrer">
+                            Portal Pedro Landia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            Cadastrar novo usuário
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <hr>
+
+    <!-- Rodapé -->
+    <footer>
+        <h3>Localização</h3>
+
+        <iframe
+            src="https://www.google.com/maps?q=Juiz%20de%20Fora%20MG&output=embed"
+            title="Mapa de localização - Juiz de Fora MG"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+        <p>&copy; 2026 - Smart Control</p>
+    </footer>
+
+    <!-- jQuery + jQuery Mask Plugin -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <!-- Chart.js: usado para o gráfico de telemetria em tempo real -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

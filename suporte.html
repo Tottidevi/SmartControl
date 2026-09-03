@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Control - Suporte</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/suporte.css">
+</head>
+
+<body class="dark-theme">
+
+    <header>
+        <img src="assets/images/logo2dnv.png" alt="Logo Smart Control" width="80" height="80">
+
+        <h1>Suporte Smart Control</h1>
+
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="index.html">Sair</a></li>
+                <li>
+                    <button id="botaoTema" type="button">☀️ Light Mode</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Entre em contato</h2>
+
+        <p id="mensagemSucessoSuporte" class="mensagem-sucesso" role="status" aria-live="polite"></p>
+
+        <form id="formSuporte" novalidate>
+            <div>
+                <label for="nomeSuporte">Nome:</label>
+                <input type="text" id="nomeSuporte" name="nomeSuporte" minlength="3" placeholder="Seu nome completo" required>
+            </div>
+
+            <div>
+                <label for="emailSuporte">E-mail:</label>
+                <input type="email" id="emailSuporte" name="emailSuporte" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div>
+                <label for="telefoneSuporte">Telefone:</label>
+                <input type="tel" id="telefoneSuporte" name="telefoneSuporte" placeholder="(32) 99999-9999" required>
+            </div>
+
+            <div>
+                <label for="assuntoSuporte">Assunto:</label>
+                <select id="assuntoSuporte" name="assuntoSuporte" required>
+                    <option value="">Selecione</option>
+                    <option value="dispositivo">Problema com dispositivo</option>
+                    <option value="telemetria">Problema na telemetria</option>
+                    <option value="acesso">Problema de acesso</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mensagemSuporte">Mensagem:</label>
+                <textarea id="mensagemSuporte" name="mensagemSuporte" minlength="10" placeholder="Descreva sua solicitação..." required></textarea>
+            </div>
+
+            <div class="botoes-suporte">
+                <button type="submit">Enviar solicitação</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Smart Control</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
