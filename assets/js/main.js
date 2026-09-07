@@ -583,9 +583,6 @@ function atualizarTelemetria() {
     atualizarGraficoTelemetria(ativos, emAlerta);
 }
 
-setInterval(atualizarTelemetria, 2000);
-atualizarTelemetria();
-
 /* ========================================
    GRÁFICO DE TELEMETRIA (Chart.js)
 ======================================== */
@@ -671,6 +668,9 @@ function atualizarGraficoTelemetria(ativos, emAlerta) {
 
     graficoTelemetria.update();
 }
+
+setInterval(atualizarTelemetria, 2000);
+atualizarTelemetria();
 
 /* ========================================
    FORMULÁRIO DE SUPORTE
