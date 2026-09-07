@@ -7,30 +7,48 @@
 /* ========================================
    INDEX - LISTA DE ACESSO
 ======================================== */
-.acesso-lista {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+login-secao {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+ 
+#formLogin {
+    text-align: left;
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
-
-.acesso-lista a {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #7b3fc6;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 8px;
+ 
+#formLogin button {
+    width: 100%;
+}
+ 
+.login-ajuda {
+    margin-top: 15px;
+    font-size: 14px;
+}
+ 
+.login-ajuda a {
+    color: #c99cff;
     font-weight: bold;
-    transition: 0.2s;
 }
-
-.acesso-lista a:hover,
-.acesso-lista a:focus-visible {
-    background: #9959e8;
-    transform: translateY(-2px);
-    text-decoration: none;
+ 
+.login-ajuda a:hover,
+.login-ajuda a:focus-visible {
+    text-decoration: underline;
+}
+ 
+.mensagem-erro-login {
+    min-height: 20px;
+    color: #ff9a9a;
+    font-weight: bold;
+    margin-top: 10px;
+}
+ 
+body:not(.dark-theme) .login-ajuda a {
+    color: #6d3bb8;
 }
 
 /* Botão de tema */

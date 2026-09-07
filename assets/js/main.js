@@ -10,6 +10,7 @@
 const CHAVE_USUARIO = "usuarioSmartControl";
 const CHAVE_DISPOSITIVOS = "smartControlDispositivos";
 const CHAVE_TEMA = "smartControlTema";
+const CHAVE_SESSAO = "smartControlSessaoAtiva";
 
 /* ========================================
    RELÓGIO + SAUDAÇÃO
@@ -241,7 +242,7 @@ if (formCadastro) {
             if (campo && campo.checked) permissoes.push(id);
         });
 
-        const usuario = { nome, cpf, email, telefone, cargo, turno, permissoes };
+        const usuario = { nome, cpf, email, telefone, senha,cargo, turno, permissoes };
 
         localStorage.setItem(CHAVE_USUARIO, JSON.stringify(usuario));
 
@@ -249,9 +250,59 @@ if (formCadastro) {
 
         formCadastro.reset();
 
+        window.location.href = "index.html";
+    });
+}
+
+/* ========================================
+   LOGIN (index.html)
+======================================== */
+const formLogin = document.querySelector("#formLogin");
+ 
+if (formLogin) {
+    const mensagemLogin = document.querySelector("#mensagemLogin");
+ 
+    formLogin.addEventListener("submit", function (event) {
+        event.preventDefault();
+ 
+        const email = document.querySelector("#emailLogin").value.trim();
+        const senha = document.querySelector("#senhaLogin").value;
+ 
+        const dados = localStorage.getItem(CHAVE_USUARIO);
+ 
+        if (!dados) {
+            if (mensagemLogin) {
+                mensagemLogin.textContent =
+                    "Nenhum usuário cadastrado ainda. Clique em \"Cadastre-se aqui\".";
+            }
+            return;
+        }
+ 
+        const usuario = JSON.parse(dados);
+ 
+        if (usuario.email !== email || usuario.senha !== senha) {
+            if (mensagemLogin) {
+                mensagemLogin.textContent = "E-mail ou senha incorretos!";
+            }
+            return;
+        }
+ 
+        // Login correto: marca a sessão como ativa e vai para o dashboard
+        localStorage.setItem(CHAVE_SESSAO, "true");
         window.location.href = "dashboard.html";
     });
 }
+ 
+/* ========================================
+   LOGOUT ("Sair" no menu de navegação)
+======================================== */
+document.querySelectorAll('a[href="index.html"]').forEach(function (link) {
+    if (link.textContent.trim().toLowerCase() === "sair") {
+        link.addEventListener("click", function () {
+            localStorage.removeItem(CHAVE_SESSAO);
+        });
+    }
+});
 
 /* ========================================
    MOSTRAR USUÁRIO NO DASHBOARD
